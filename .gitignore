@@ -15,10 +15,12 @@ node_modules/
 # ===============================
 # Build Output
 # ===============================
-dist/
-build/
-.next/
-out/
+# Allow backend/dist to be deployed (Render uses pre-built dist)
+frontend/.next/
+frontend/out/
+frontend/build/
+# Exclude only frontend dist if it exists
+frontend/dist/
 
 # ===============================
 # Test Coverage
