@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: task-management-backend
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install --production
+    startCommand: node dist/src/main.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        value: mongodb+srv://krishnagadipally006_db_user:IGI1da73QktUkJ16@cluster0.a0bw0xi.mongodb.net/task-management?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: supersecret_dev_jwt_key_assessment_2026
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: FRONTEND_URL
+        value: https://task-management-frontend-neon.vercel.app
+      - key: EMAIL_PROVIDER
+        value: log
