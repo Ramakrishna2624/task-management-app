@@ -15,6 +15,7 @@ const getBaseUrl = (): string => {
 
 export const api = axios.create({
   baseURL: 'https://task-management-backend-56j7.onrender.com/api',
+  timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
