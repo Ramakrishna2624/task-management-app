@@ -8,6 +8,11 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com', 'openweathermap.org'],
   },
+  env: {
+    NEXT_PUBLIC_API_BASE_URL:
+      process.env.NEXT_PUBLIC_API_BASE_URL ||
+      'https://task-management-backend-56j7.onrender.com/api',
+  },
 };
 
 module.exports = nextConfig;
