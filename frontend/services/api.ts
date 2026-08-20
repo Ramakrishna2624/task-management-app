@@ -14,15 +14,16 @@ const getBaseUrl = (): string => {
 };
 
 export const api = axios.create({
-  baseURL: getBaseUrl(),
+  baseURL: 'https://task-management-backend-56j7.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Request interceptor: attach bearer token dynamically
+// Request interceptor: attach bearer token dynamically and set baseURL
 api.interceptors.request.use(
   (config) => {
+    config.baseURL = getBaseUrl();
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('token');
       if (token) {
